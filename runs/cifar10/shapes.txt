@@ -1,0 +1,148 @@
+== basic_cnn (input (1, 3, 32, 32))
+features.0                   Conv2d             (1, 32, 32, 32)            896
+features.1                   ReLU               (1, 32, 32, 32)              0
+features.2                   MaxPool2d          (1, 32, 16, 16)              0
+features.3                   Conv2d             (1, 64, 16, 16)         18,496
+features.4                   ReLU               (1, 64, 16, 16)              0
+features.5                   MaxPool2d          (1, 64, 8, 8)                0
+features.6                   Conv2d             (1, 64, 8, 8)           36,928
+features.7                   ReLU               (1, 64, 8, 8)                0
+features.8                   MaxPool2d          (1, 64, 4, 4)                0
+classifier.0                 Flatten            (1, 1024)                    0
+classifier.1                 Linear             (1, 64)                 65,600
+classifier.2                 ReLU               (1, 64)                      0
+classifier.3                 Dropout            (1, 64)                      0
+classifier.4                 Linear             (1, 10)                    650
+
+== vgg_bn (input (1, 3, 32, 32))
+features.0.0                 Conv2d             (1, 64, 32, 32)          1,728
+features.0.1                 BatchNorm2d        (1, 64, 32, 32)            128
+features.0.2                 ReLU               (1, 64, 32, 32)              0
+features.1.0                 Conv2d             (1, 64, 32, 32)         36,864
+features.1.1                 BatchNorm2d        (1, 64, 32, 32)            128
+features.1.2                 ReLU               (1, 64, 32, 32)              0
+features.2                   MaxPool2d          (1, 64, 16, 16)              0
+features.3.0                 Conv2d             (1, 128, 16, 16)        73,728
+features.3.1                 BatchNorm2d        (1, 128, 16, 16)           256
+features.3.2                 ReLU               (1, 128, 16, 16)             0
+features.4.0                 Conv2d             (1, 128, 16, 16)       147,456
+features.4.1                 BatchNorm2d        (1, 128, 16, 16)           256
+features.4.2                 ReLU               (1, 128, 16, 16)             0
+features.5                   MaxPool2d          (1, 128, 8, 8)               0
+features.6.0                 Conv2d             (1, 256, 8, 8)         294,912
+features.6.1                 BatchNorm2d        (1, 256, 8, 8)             512
+features.6.2                 ReLU               (1, 256, 8, 8)               0
+features.7.0                 Conv2d             (1, 256, 8, 8)         589,824
+features.7.1                 BatchNorm2d        (1, 256, 8, 8)             512
+features.7.2                 ReLU               (1, 256, 8, 8)               0
+features.8                   MaxPool2d          (1, 256, 4, 4)               0
+classifier.0                 AdaptiveAvgPool2d  (1, 256, 1, 1)               0
+classifier.1                 Flatten            (1, 256)                     0
+classifier.2                 Dropout            (1, 256)                     0
+classifier.3                 Linear             (1, 10)                  2,570
+
+== depthwise_cnn (input (1, 3, 32, 32))
+features.0.0                 Conv2d             (1, 64, 32, 32)          1,728
+features.0.1                 BatchNorm2d        (1, 64, 32, 32)            128
+features.0.2                 ReLU               (1, 64, 32, 32)              0
+features.1.block.0           Conv2d             (1, 64, 32, 32)            576
+features.1.block.1           BatchNorm2d        (1, 64, 32, 32)            128
+features.1.block.2           ReLU               (1, 64, 32, 32)              0
+features.1.block.3           Conv2d             (1, 64, 32, 32)          4,096
+features.1.block.4           BatchNorm2d        (1, 64, 32, 32)            128
+features.1.block.5           ReLU               (1, 64, 32, 32)              0
+features.2                   MaxPool2d          (1, 64, 16, 16)              0
+features.3.block.0           Conv2d             (1, 64, 16, 16)            576
+features.3.block.1           BatchNorm2d        (1, 64, 16, 16)            128
+features.3.block.2           ReLU               (1, 64, 16, 16)              0
+features.3.block.3           Conv2d             (1, 128, 16, 16)         8,192
+features.3.block.4           BatchNorm2d        (1, 128, 16, 16)           256
+features.3.block.5           ReLU               (1, 128, 16, 16)             0
+features.4.block.0           Conv2d             (1, 128, 16, 16)         1,152
+features.4.block.1           BatchNorm2d        (1, 128, 16, 16)           256
+features.4.block.2           ReLU               (1, 128, 16, 16)             0
+features.4.block.3           Conv2d             (1, 128, 16, 16)        16,384
+features.4.block.4           BatchNorm2d        (1, 128, 16, 16)           256
+features.4.block.5           ReLU               (1, 128, 16, 16)             0
+features.5                   MaxPool2d          (1, 128, 8, 8)               0
+features.6.block.0           Conv2d             (1, 128, 8, 8)           1,152
+features.6.block.1           BatchNorm2d        (1, 128, 8, 8)             256
+features.6.block.2           ReLU               (1, 128, 8, 8)               0
+features.6.block.3           Conv2d             (1, 256, 8, 8)          32,768
+features.6.block.4           BatchNorm2d        (1, 256, 8, 8)             512
+features.6.block.5           ReLU               (1, 256, 8, 8)               0
+features.7.block.0           Conv2d             (1, 256, 8, 8)           2,304
+features.7.block.1           BatchNorm2d        (1, 256, 8, 8)             512
+features.7.block.2           ReLU               (1, 256, 8, 8)               0
+features.7.block.3           Conv2d             (1, 256, 8, 8)          65,536
+features.7.block.4           BatchNorm2d        (1, 256, 8, 8)             512
+features.7.block.5           ReLU               (1, 256, 8, 8)               0
+features.8                   MaxPool2d          (1, 256, 4, 4)               0
+classifier.0                 AdaptiveAvgPool2d  (1, 256, 1, 1)               0
+classifier.1                 Flatten            (1, 256)                     0
+classifier.2                 Dropout            (1, 256)                     0
+classifier.3                 Linear             (1, 10)                  2,570
+
+== small_resnet (input (1, 3, 32, 32))
+features.0.0                 Conv2d             (1, 32, 32, 32)            864
+features.0.1                 BatchNorm2d        (1, 32, 32, 32)             64
+features.0.2                 ReLU               (1, 32, 32, 32)              0
+features.1.f.0.0             Conv2d             (1, 32, 32, 32)          9,216
+features.1.f.0.1             BatchNorm2d        (1, 32, 32, 32)             64
+features.1.f.0.2             ReLU               (1, 32, 32, 32)              0
+features.1.f.1               Conv2d             (1, 32, 32, 32)          9,216
+features.1.f.2               BatchNorm2d        (1, 32, 32, 32)             64
+features.1.shortcut          Identity           (1, 32, 32, 32)              0
+features.2.f.0.0             Conv2d             (1, 32, 32, 32)          9,216
+features.2.f.0.1             BatchNorm2d        (1, 32, 32, 32)             64
+features.2.f.0.2             ReLU               (1, 32, 32, 32)              0
+features.2.f.1               Conv2d             (1, 32, 32, 32)          9,216
+features.2.f.2               BatchNorm2d        (1, 32, 32, 32)             64
+features.2.shortcut          Identity           (1, 32, 32, 32)              0
+features.3.f.0.0             Conv2d             (1, 32, 32, 32)          9,216
+features.3.f.0.1             BatchNorm2d        (1, 32, 32, 32)             64
+features.3.f.0.2             ReLU               (1, 32, 32, 32)              0
+features.3.f.1               Conv2d             (1, 32, 32, 32)          9,216
+features.3.f.2               BatchNorm2d        (1, 32, 32, 32)             64
+features.3.shortcut          Identity           (1, 32, 32, 32)              0
+features.4.f.0.0             Conv2d             (1, 64, 16, 16)         18,432
+features.4.f.0.1             BatchNorm2d        (1, 64, 16, 16)            128
+features.4.f.0.2             ReLU               (1, 64, 16, 16)              0
+features.4.f.1               Conv2d             (1, 64, 16, 16)         36,864
+features.4.f.2               BatchNorm2d        (1, 64, 16, 16)            128
+features.4.shortcut.0        Conv2d             (1, 64, 16, 16)          2,048
+features.4.shortcut.1        BatchNorm2d        (1, 64, 16, 16)            128
+features.5.f.0.0             Conv2d             (1, 64, 16, 16)         36,864
+features.5.f.0.1             BatchNorm2d        (1, 64, 16, 16)            128
+features.5.f.0.2             ReLU               (1, 64, 16, 16)              0
+features.5.f.1               Conv2d             (1, 64, 16, 16)         36,864
+features.5.f.2               BatchNorm2d        (1, 64, 16, 16)            128
+features.5.shortcut          Identity           (1, 64, 16, 16)              0
+features.6.f.0.0             Conv2d             (1, 64, 16, 16)         36,864
+features.6.f.0.1             BatchNorm2d        (1, 64, 16, 16)            128
+features.6.f.0.2             ReLU               (1, 64, 16, 16)              0
+features.6.f.1               Conv2d             (1, 64, 16, 16)         36,864
+features.6.f.2               BatchNorm2d        (1, 64, 16, 16)            128
+features.6.shortcut          Identity           (1, 64, 16, 16)              0
+features.7.f.0.0             Conv2d             (1, 128, 8, 8)          73,728
+features.7.f.0.1             BatchNorm2d        (1, 128, 8, 8)             256
+features.7.f.0.2             ReLU               (1, 128, 8, 8)               0
+features.7.f.1               Conv2d             (1, 128, 8, 8)         147,456
+features.7.f.2               BatchNorm2d        (1, 128, 8, 8)             256
+features.7.shortcut.0        Conv2d             (1, 128, 8, 8)           8,192
+features.7.shortcut.1        BatchNorm2d        (1, 128, 8, 8)             256
+features.8.f.0.0             Conv2d             (1, 128, 8, 8)         147,456
+features.8.f.0.1             BatchNorm2d        (1, 128, 8, 8)             256
+features.8.f.0.2             ReLU               (1, 128, 8, 8)               0
+features.8.f.1               Conv2d             (1, 128, 8, 8)         147,456
+features.8.f.2               BatchNorm2d        (1, 128, 8, 8)             256
+features.8.shortcut          Identity           (1, 128, 8, 8)               0
+features.9.f.0.0             Conv2d             (1, 128, 8, 8)         147,456
+features.9.f.0.1             BatchNorm2d        (1, 128, 8, 8)             256
+features.9.f.0.2             ReLU               (1, 128, 8, 8)               0
+features.9.f.1               Conv2d             (1, 128, 8, 8)         147,456
+features.9.f.2               BatchNorm2d        (1, 128, 8, 8)             256
+features.9.shortcut          Identity           (1, 128, 8, 8)               0
+classifier.0                 AdaptiveAvgPool2d  (1, 128, 1, 1)               0
+classifier.1                 Flatten            (1, 128)                     0
+classifier.2                 Linear             (1, 10)                  1,290

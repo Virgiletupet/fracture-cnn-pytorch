@@ -1,0 +1,142 @@
+.venv/bin/python scripts/04_train.py --model resnet18 --run-name resnet18
+run resnet18 on mps: 11,177,025 parameters, pos_weight 4.62, train 2810 / val 602 images
+epoch  1  train 1.1540  val 1.0739  AUC 0.694  AP 0.351  10s  *
+epoch  2  train 1.0423  val 0.9953  AUC 0.748  AP 0.427  6s  *
+epoch  3  train 0.9971  val 1.0369  AUC 0.753  AP 0.434  6s  *
+epoch  4  train 0.8836  val 0.7955  AUC 0.866  AP 0.644  22s  *
+epoch  5  train 0.7492  val 0.8620  AUC 0.857  AP 0.694  23s  *
+epoch  6  train 0.6699  val 0.9031  AUC 0.855  AP 0.684  23s
+epoch  7  train 0.6486  val 0.8025  AUC 0.864  AP 0.709  22s  *
+epoch  8  train 0.5579  val 0.7858  AUC 0.869  AP 0.668  23s
+epoch  9  train 0.5150  val 1.0608  AUC 0.851  AP 0.660  24s
+epoch 10  train 0.4642  val 0.9081  AUC 0.872  AP 0.698  26s
+epoch 11  train 0.4264  val 1.1189  AUC 0.872  AP 0.682  26s
+epoch 12  train 0.3708  val 1.1784  AUC 0.872  AP 0.716  26s  *
+epoch 13  train 0.3700  val 1.2445  AUC 0.884  AP 0.746  27s  *
+epoch 14  train 0.3468  val 1.3921  AUC 0.876  AP 0.703  27s
+epoch 15  train 0.3025  val 1.2641  AUC 0.879  AP 0.730  27s
+epoch 16  train 0.2692  val 1.5129  AUC 0.877  AP 0.730  28s
+epoch 17  train 0.2810  val 1.7034  AUC 0.875  AP 0.734  28s
+epoch 18  train 0.2461  val 1.6181  AUC 0.874  AP 0.709  28s
+epoch 19  train 0.2131  val 1.7660  AUC 0.875  AP 0.712  29s
+epoch 20  train 0.2074  val 1.6235  AUC 0.877  AP 0.710  28s
+early stopping: no improvement for 7 epochs
+.venv/bin/python scripts/04_train.py --model simple_cnn --run-name simple_cnn --epochs 40 --patience 8 --freeze-epochs 0 --lr-head 1e-3
+run simple_cnn on mps: 389,153 parameters, pos_weight 4.62, train 2810 / val 602 images
+epoch  1  train 1.0797  val 1.3921  AUC 0.724  AP 0.458  20s  *
+epoch  2  train 1.0464  val 0.9816  AUC 0.743  AP 0.466  14s  *
+epoch  3  train 1.0328  val 0.9961  AUC 0.733  AP 0.473  15s  *
+epoch  4  train 1.0273  val 1.0465  AUC 0.697  AP 0.428  15s
+epoch  5  train 1.0145  val 1.2055  AUC 0.751  AP 0.490  15s  *
+epoch  6  train 0.9867  val 1.1055  AUC 0.750  AP 0.492  17s  *
+epoch  7  train 0.9842  val 1.0117  AUC 0.739  AP 0.429  17s
+epoch  8  train 0.9813  val 1.0126  AUC 0.723  AP 0.442  18s
+epoch  9  train 0.9826  val 1.0424  AUC 0.750  AP 0.460  18s
+epoch 10  train 0.9721  val 0.9570  AUC 0.753  AP 0.474  16s
+epoch 11  train 0.9458  val 0.9710  AUC 0.758  AP 0.504  17s  *
+epoch 12  train 0.9458  val 1.4313  AUC 0.705  AP 0.401  16s
+epoch 13  train 0.9571  val 1.0610  AUC 0.742  AP 0.444  17s
+epoch 14  train 0.9495  val 0.9488  AUC 0.757  AP 0.504  16s
+epoch 15  train 0.9577  val 1.0860  AUC 0.767  AP 0.505  17s  *
+epoch 16  train 0.9313  val 1.4184  AUC 0.661  AP 0.311  17s
+epoch 17  train 0.8998  val 0.9121  AUC 0.780  AP 0.530  17s  *
+epoch 18  train 0.9265  val 0.9290  AUC 0.775  AP 0.513  16s
+epoch 19  train 0.9269  val 0.9595  AUC 0.763  AP 0.519  18s
+epoch 20  train 0.8993  val 1.0491  AUC 0.758  AP 0.482  16s
+epoch 21  train 0.8838  val 1.3989  AUC 0.746  AP 0.505  17s
+epoch 22  train 0.8994  val 0.9237  AUC 0.789  AP 0.547  16s  *
+epoch 23  train 0.8960  val 1.0059  AUC 0.787  AP 0.525  17s
+epoch 24  train 0.8752  val 0.9931  AUC 0.777  AP 0.533  17s
+epoch 25  train 0.8698  val 0.9108  AUC 0.799  AP 0.550  17s  *
+epoch 26  train 0.8533  val 0.8997  AUC 0.796  AP 0.545  17s
+epoch 27  train 0.8588  val 0.8882  AUC 0.801  AP 0.548  17s
+epoch 28  train 0.8585  val 0.8920  AUC 0.803  AP 0.534  17s
+epoch 29  train 0.8373  val 0.9335  AUC 0.796  AP 0.537  16s
+epoch 30  train 0.8547  val 0.8612  AUC 0.812  AP 0.557  17s  *
+epoch 31  train 0.8358  val 0.8680  AUC 0.811  AP 0.522  17s
+epoch 32  train 0.8259  val 0.9081  AUC 0.811  AP 0.559  18s  *
+epoch 33  train 0.8170  val 0.8635  AUC 0.811  AP 0.560  18s  *
+epoch 34  train 0.8039  val 0.8570  AUC 0.815  AP 0.576  18s  *
+epoch 35  train 0.8170  val 0.8527  AUC 0.816  AP 0.557  17s
+epoch 36  train 0.8034  val 0.8532  AUC 0.816  AP 0.571  16s
+epoch 37  train 0.8210  val 0.8645  AUC 0.814  AP 0.568  16s
+epoch 38  train 0.8075  val 0.8596  AUC 0.814  AP 0.565  16s
+epoch 39  train 0.7985  val 0.8610  AUC 0.814  AP 0.568  16s
+epoch 40  train 0.7938  val 0.8611  AUC 0.814  AP 0.569  15s
+.venv/bin/python scripts/05_evaluate.py resnet18 && .venv/bin/python scripts/05_evaluate.py simple_cnn
+# Evaluation of run `resnet18`
+
+Test set: 603 images, 108 fractures (prevalence 17.9%). Thresholds were fixed on the validation set; the test set was scored once.
+
+## Threshold-free metrics (test, 95% bootstrap CI)
+
+- ROC-AUC: 0.882 [0.839, 0.922] (validation 0.884)
+- Average precision (PR-AUC): 0.751 [0.674, 0.817] (random model = 0.179)
+- Brier score: 0.089 (probabilities are not calibrated: the loss weights fractures by pos_weight)
+
+## Operating points (test, 95% Wilson CI)
+
+| Threshold rule | t | TP | FN | FP | TN | Recall | Specificity | Precision | F1 |
+|---|---|---|---|---|---|---|---|---|---|
+| recall>=0.90 (val) | 0.010 | 97 | 11 | 206 | 289 | 0.898 [0.827, 0.942] | 0.584 [0.540, 0.626] | 0.320 [0.270, 0.375] | 0.472 |
+| max F1 (val) | 0.378 | 71 | 37 | 32 | 463 | 0.657 [0.564, 0.740] | 0.935 [0.910, 0.954] | 0.689 [0.594, 0.771] | 0.673 |
+| 0.5 (default) | 0.500 | 67 | 41 | 28 | 467 | 0.620 [0.526, 0.706] | 0.943 [0.919, 0.961] | 0.705 [0.607, 0.788] | 0.660 |
+
+Choosing the best-F1 threshold on the test set itself (the original project's protocol) would report F1 = 0.681 instead of 0.673: an optimistic bias of +0.008.
+
+## Subgroups (test, threshold for recall >= 0.90)
+
+| Subgroup | Images | Fractures | Recall [95% CI] | Specificity |
+|---|---|---|---|---|
+| hand | 206 | 64 | 0.94 [0.85, 0.98] | 0.41 |
+| leg | 344 | 39 | 0.85 [0.70, 0.93] | 0.61 |
+| hip | 68 | 14 | 0.79 [0.52, 0.92] | 0.85 |
+| shoulder | 44 | 9 | 0.78 [0.45, 0.94] | 0.80 |
+| mixed regions | 55 | 17 | 0.76 [0.53, 0.90] | 0.68 |
+| with implants | 12 | 12 | 1.00 [0.76, 1.00] | n/a |
+| without implants | 591 | 96 | 0.89 [0.81, 0.93] | 0.58 |
+| portrait 373x454 | 383 | 75 | 0.92 [0.84, 0.96] | 0.49 |
+| landscape 454x373 | 164 | 18 | 0.83 [0.61, 0.94] | 0.81 |
+| large format | 56 | 15 | 0.87 [0.62, 0.96] | 0.51 |
+
+Small subgroups have wide intervals: read them as warnings, not as conclusions.
+
+# Evaluation of run `simple_cnn`
+
+Test set: 603 images, 108 fractures (prevalence 17.9%). Thresholds were fixed on the validation set; the test set was scored once.
+
+## Threshold-free metrics (test, 95% bootstrap CI)
+
+- ROC-AUC: 0.794 [0.744, 0.838] (validation 0.815)
+- Average precision (PR-AUC): 0.518 [0.421, 0.614] (random model = 0.179)
+- Brier score: 0.161 (probabilities are not calibrated: the loss weights fractures by pos_weight)
+
+## Operating points (test, 95% Wilson CI)
+
+| Threshold rule | t | TP | FN | FP | TN | Recall | Specificity | Precision | F1 |
+|---|---|---|---|---|---|---|---|---|---|
+| recall>=0.90 (val) | 0.215 | 97 | 11 | 273 | 222 | 0.898 [0.827, 0.942] | 0.448 [0.405, 0.493] | 0.262 [0.220, 0.309] | 0.406 |
+| max F1 (val) | 0.717 | 39 | 69 | 33 | 462 | 0.361 [0.277, 0.455] | 0.933 [0.908, 0.952] | 0.542 [0.427, 0.652] | 0.433 |
+| 0.5 (default) | 0.500 | 68 | 40 | 106 | 389 | 0.630 [0.536, 0.715] | 0.786 [0.748, 0.820] | 0.391 [0.321, 0.465] | 0.482 |
+
+Choosing the best-F1 threshold on the test set itself (the original project's protocol) would report F1 = 0.517 instead of 0.433: an optimistic bias of +0.083.
+
+## Subgroups (test, threshold for recall >= 0.90)
+
+| Subgroup | Images | Fractures | Recall [95% CI] | Specificity |
+|---|---|---|---|---|
+| hand | 206 | 64 | 0.97 [0.89, 0.99] | 0.11 |
+| leg | 344 | 39 | 0.79 [0.64, 0.89] | 0.58 |
+| hip | 68 | 14 | 0.86 [0.60, 0.96] | 0.57 |
+| shoulder | 44 | 9 | 1.00 [0.70, 1.00] | 0.00 |
+| mixed regions | 55 | 17 | 0.94 [0.73, 0.99] | 0.08 |
+| with implants | 12 | 12 | 1.00 [0.76, 1.00] | n/a |
+| without implants | 591 | 96 | 0.89 [0.81, 0.93] | 0.45 |
+| portrait 373x454 | 383 | 75 | 0.93 [0.85, 0.97] | 0.27 |
+| landscape 454x373 | 164 | 18 | 0.72 [0.49, 0.88] | 0.82 |
+| large format | 56 | 15 | 0.93 [0.70, 0.99] | 0.49 |
+
+Small subgroups have wide intervals: read them as warnings, not as conclusions.
+
+.venv/bin/python scripts/06_gradcam.py resnet18
+saved runs/resnet18/gradcam.png
